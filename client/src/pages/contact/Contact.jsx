@@ -3,14 +3,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { submitInquiry } from "../../api/inquiryApi";
 
-import {
-  FaMapMarkerAlt,
-  FaPhoneAlt,
-  FaEnvelope,
-  FaWhatsapp,
-  FaWarehouse,
-  FaTruck,
-} from "react-icons/fa";
+import {FaMapMarkerAlt,FaPhoneAlt,FaEnvelope,FaWhatsapp,FaWarehouse,FaTruck,} from "react-icons/fa";
 
 const locations = [
   {
@@ -80,11 +73,11 @@ const Contact = () => {
   return (
     <div className="bg-black text-white overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative py-36 bg-gradient-to-br from-green-900 via-black to-yellow-900">
+      <section className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         {/* Glow */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 blur-3xl rounded-full"></div>
 
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/20 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 blur-3xl rounded-full"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <motion.div
@@ -96,12 +89,11 @@ const Contact = () => {
               Contact Us
             </div>
 
-            <h1 className="mt-8 text-5xl md:text-7xl font-extrabold leading-tight">
-              Our Presence
-              <span className="block text-yellow-400 mt-4">Across India</span>
+            <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">
+              Our Presence & Across India
             </h1>
 
-            <p className="mt-8 max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
+            <p className="mt-6 max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
               Contact Chandra Enterprises for premium banana supply, cold
               storage facilities, logistics services, and wholesale distribution
               support.
@@ -111,9 +103,9 @@ const Contact = () => {
       </section>
 
       {/* CONTACT INFO */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6">
             {/* Phone */}
             <motion.div
               initial={{ opacity: 0, y: 80 }}
@@ -122,11 +114,11 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-white/5 border border-white/10 rounded-3xl p-10 text-center backdrop-blur-xl"
             >
-              <div className="w-20 h-20 mx-auto rounded-3xl bg-green-600 flex items-center justify-center text-3xl">
+              <div className="w-15 h-15 mx-auto rounded-3xl bg-green-600 flex items-center justify-center text-3xl">
                 <FaPhoneAlt />
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold">Call Us</h3>
+              <h3 className="mt-6 text-2xl font-bold">Call Us</h3>
 
               <p className="mt-4 text-gray-400">+91 9801835063</p>
             </motion.div>
@@ -139,11 +131,11 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-white/5 border border-white/10 rounded-3xl p-10 text-center backdrop-blur-xl"
             >
-              <div className="w-20 h-20 mx-auto rounded-3xl bg-yellow-500 flex items-center justify-center text-3xl text-black">
+              <div className="w-15 h-15 mx-auto rounded-3xl bg-yellow-500 flex items-center justify-center text-3xl text-black">
                 <FaEnvelope />
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold">Email Us</h3>
+              <h3 className="mt-6 text-2xl font-bold">Email Us</h3>
 
               <p className="mt-4 text-gray-400">ia3055951@gmail.com</p>
             </motion.div>
@@ -156,11 +148,11 @@ const Contact = () => {
               viewport={{ once: true }}
               className="bg-white/5 border border-white/10 rounded-3xl p-10 text-center backdrop-blur-xl"
             >
-              <div className="w-20 h-20 mx-auto rounded-3xl bg-green-500 flex items-center justify-center text-3xl">
+              <div className="w-15 h-15 mx-auto rounded-3xl bg-green-500 flex items-center justify-center text-3xl">
                 <FaWhatsapp />
               </div>
 
-              <h3 className="mt-8 text-2xl font-bold">WhatsApp</h3>
+              <h3 className="mt-6 text-2xl font-bold">WhatsApp</h3>
 
               <a
                 href="https://wa.me/919801835063"
@@ -184,16 +176,13 @@ const Contact = () => {
               Our Locations
             </div>
 
-            <h2 className="mt-8 text-5xl font-extrabold">
-              Warehouses &
-              <span className="block text-green-400 mt-2">
-                Logistics Network
-              </span>
+            <h2 className="mt-6 text-4xl font-extrabold">
+              Warehouses & Logistics Network
             </h2>
           </div>
 
           {/* Cards */}
-          <div className="mt-20 grid lg:grid-cols-3 gap-8">
+          <div className="mt-10 grid lg:grid-cols-3 gap-6">
             {locations.map((location, index) => (
               <motion.div
                 key={location.id}
@@ -212,7 +201,7 @@ const Contact = () => {
                 {/* Card */}
                 <div className="relative bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-xl hover:-translate-y-3 transition-all duration-500">
                   {/* Icon */}
-                  <div className="w-20 h-20 rounded-3xl bg-gradient-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl">
+                  <div className="w-15 h-15 rounded-3xl bg-gradient-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl">
                     {location.icon}
                   </div>
 
@@ -283,17 +272,14 @@ const Contact = () => {
       </section>
 
       {/* CONTACT FORM */}
-      <section className="pb-24">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="bg-white/5 border border-white/10 rounded-[40px] p-10 lg:p-16 backdrop-blur-xl">
+      <section className="pb-12 bg-sky-400">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className=" border-white/10 rounded-[40px] p-10 lg:p-10 backdrop-blur-xl">
             <div className="text-center">
-              <div className="inline-block bg-green-500/10 text-green-400 px-5 py-2 rounded-full text-sm font-semibold border border-green-500/20">
-                Send Inquiry
-              </div>
 
-              <h2 className="mt-8 text-5xl font-extrabold">
+              <h2 className="mt-6 text-5xl font-extrabold">
                 Let’s Discuss Your
-                <span className="block text-yellow-400 mt-2">
+                <span className="block text-white mt-2">
                   Banana Supply Requirement
                 </span>
               </h2>
@@ -302,7 +288,7 @@ const Contact = () => {
             {/* Form */}
             <form
               onSubmit={handleSubmit}
-              className="mt-16 grid md:grid-cols-2 gap-8"
+              className="mt-10 grid md:grid-cols-2 gap-6"
             >
               <input
                 type="text"
@@ -310,7 +296,7 @@ const Contact = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-black border border-white/10 rounded-2xl px-6 py-5 outline-none"
+                className="bg-white border text-black border-black rounded-2xl px-6 py-5 outline-none"
               />
 
               <input
@@ -319,7 +305,7 @@ const Contact = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="bg-black border border-white/10 rounded-2xl px-6 py-5 outline-none"
+                className="bg-white border text-black border-black rounded-2xl px-6 py-5 outline-none"
               />
 
               <input
@@ -328,7 +314,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address"
-                className="bg-black border border-white/10 rounded-2xl px-6 py-5 outline-none md:col-span-2"
+                className="bg-white border text-black border-black rounded-2xl px-6 py-5 outline-none md:col-span-2"
               />
 
               <textarea
@@ -337,7 +323,7 @@ const Contact = () => {
                 onChange={handleChange}
                 rows="6"
                 placeholder="Your Message"
-                className="bg-black border border-white/10 rounded-2xl px-6 py-5 outline-none md:col-span-2"
+                className="bg-white border text-black border-black rounded-2xl px-6 py-5 outline-none md:col-span-2"
               ></textarea>
 
               <button

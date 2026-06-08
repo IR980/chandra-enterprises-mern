@@ -48,6 +48,7 @@ export const registerUser = async (req, res) => {
         email: user.email,
         phone: user.phone,
         role: user.role,
+        profilePicture: user.profilePicture,
         token: generateToken(user._id),
       });
 
@@ -92,6 +93,8 @@ export const loginUser = async (req, res) => {
         name: user.name,
         email: user.email,
         role: user.role,
+        phone: user.phone,
+        profilePicture: user.profilePicture,
         token: generateToken(user._id),
       });
 

@@ -31,10 +31,7 @@ export const AuthProvider = ({ children }) => {
   const updateUser = (updatedUser) => {
     const currentUser = JSON.parse(localStorage.getItem("userInfo"));
 
-    const mergedUser = {
-      ...currentUser,
-      ...updatedUser,
-    };
+    const mergedUser = {...currentUser,...updatedUser,};
 
     localStorage.setItem("userInfo", JSON.stringify(mergedUser));
 

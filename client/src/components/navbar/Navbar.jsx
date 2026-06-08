@@ -123,12 +123,20 @@ const Navbar = () => {
             {/* USER LOGIN STATE */}
             {user ? (
               <div className="flex items-center gap-4">
+
                 {/* CLICKABLE USER PROFILE INFO */} 
                 <Link
                   to="/profile"
-                  className="flex items-center gap-3 rounded-full h-10 w-35 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105"
-                >
-                  <FaUserCircle className="text-2xl text-yellow-400" />
+                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105">
+                  {user.profilePicture ? (
+                    <img
+                      src={user.profilePicture}
+                      alt={user.name}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <FaUserCircle className="text-2xl text-yellow-400" />
+                  )}
 
                   <div>
 
@@ -192,15 +200,23 @@ const Navbar = () => {
             {/* MOBILE USER AUTH */}
             {user ? (
               <div className="space-y-4">
+
                 {/* PROFILE */}
                 <Link
                   to="/profile"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 bg-white/10 border border-white/10 px-5 py-4 rounded-2xl hover:bg-white/20 transition-all duration-300"
-                >
-                  <FaUserCircle className="text-2xl text-yellow-400" />
+                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105">
+                  {user.profilePicture ? (
+                    <img
+                      src={user.profilePicture}
+                      alt={user.name}
+                      className="h-10 w-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <FaUserCircle className="text-2xl text-yellow-400" />
+                  )}
 
                   <div>
+
                     <h4 className="text-white font-semibold">{user.name}</h4>
                   </div>
                 </Link>

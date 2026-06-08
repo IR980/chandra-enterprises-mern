@@ -36,7 +36,7 @@ const Gallery = () => {
     <div className="bg-black text-white overflow-hidden">
 
       {/* HERO SECTION */}
-      <section className="relative py-24 bg-gradient-to-b via-black">
+      <section className="relative py-24 via-black">
 
         <div className="absolute top-0 left-0 w-96 h-96 bg-black-500/20 blur-3xl rounded-full"></div>
 
@@ -53,11 +53,8 @@ const Gallery = () => {
               Our Gallery
             </div>
 
-            <h1 className="mt-4 text-3xl md:text-5xl font-extrabold leading-tight">
-              Banana Export &
-              <span className="block text-yellow-400 mt-4">
-                Logistics Showcase
-              </span>
+            <h1 className="mt-4 text-3xl md:text-4xl font-extrabold leading-tight">
+              Banana Export & Logistics Showcase
             </h1>
 
             <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-300 leading-relaxed">
@@ -72,7 +69,7 @@ const Gallery = () => {
       </section>
 
       {/* FILTER BUTTONS */}
-      <section className="py-6">
+      <section className="py-4">
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
@@ -170,7 +167,7 @@ const Gallery = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-24 bg-gradient-to-br from-green-900 via-black to-yellow-900">
+      <section className="py-12 bg-gradient-to-br from-green-400 via-green to-green-400">
 
         <div className="max-w-5xl mx-auto px-6 text-center">
 
@@ -203,7 +200,7 @@ const Gallery = () => {
                 href="https://wa.me/919801835063"
                 target="_blank"
                 rel="noreferrer"
-                className="bg-green-600 hover:bg-green-700 px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105"
+                className="bg-green-900 hover:bg-green-700 px-10 py-5 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105"
               >
                 WhatsApp Inquiry
               </a>

@@ -1,6 +1,12 @@
+
 import dotenv from "dotenv";
 import morgan from "morgan";
-dotenv.config();
+import path from "path";
+
+dotenv.config({
+  path: path.resolve(".env"),
+});
+
 
 import express from "express";
 import cors from "cors";
@@ -57,5 +63,4 @@ const startServer = async () => {
 };
 
 startServer();
-
 

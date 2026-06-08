@@ -37,9 +37,7 @@ const Inquiry = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/inquiries",
-        formData,
-      );
+        "http://localhost:5000/api/inquiries",formData,);
 
       toast.success(response.data.message || "Inquiry submitted successfully");
 

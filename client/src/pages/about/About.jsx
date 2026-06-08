@@ -62,9 +62,9 @@ const About = () => {
       {/* HERO SECTION */}
       <section className="relative py-26 via-white">
         {/* Glow Effects */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/20 blur-3xl rounded-full"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 blur-3xl rounded-full"></div>
 
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/20 blur-3xl rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 blur-3xl rounded-full"></div>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10 text-center">
           <motion.div
@@ -243,7 +243,7 @@ const About = () => {
 
                 {/* Card */}
                 <div className="relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl hover:-translate-y-3 transition-all duration-500">
-                  <div className="w-20 h-20 rounded-3xl bg-gradient-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl text-white">
+                  <div className="w-15 h-15 rounded-3xl bg-gradient-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl text-white">
                     {item.icon}
                   </div>
 
@@ -260,7 +260,7 @@ const About = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 bg-gradient-to-br from-green-900 via-black to-yellow-900">
+      <section className="py-12 bg-gradient-to-br from-sky-900 via-sky to-sky-900">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 80 }}
