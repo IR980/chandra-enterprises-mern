@@ -18,3 +18,27 @@ export const getGalleryImages = async (req,res) => {
 
   }
 };
+
+export const addGalleryMedia = async (req, res) => {
+  try {
+    const { title, category, description } = req.body;
+
+    const mediaType = req.file.mimetype.startsWith("video")
+      ? "video"
+      : "image";
+
+    const gallery = await Gallery.create({
+      title,
+      category,
+      description,
+      mediaUrl: req.file.path,
+      mediaType,
+    });
+
+    res.status(201).json(gallery);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};

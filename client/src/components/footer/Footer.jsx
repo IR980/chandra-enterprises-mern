@@ -98,7 +98,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/919801835063"
+                href="https://wa.me/9694578476"
                 target="_blank"
                 rel="noreferrer"
                 className="w-12 h-12 rounded-full bg-white/10 hover:bg-green-500 flex items-center justify-center transition-all duration-300"
@@ -219,10 +219,10 @@ const Footer = () => {
                 <FaPhoneAlt className="text-yellow-400" />
 
                 <a
-                  href="tel:+919801835063"
+                  href="tel:+919694578476"
                   className="hover:text-yellow-400 transition"
                 >
-                  +91 9801835063
+                  +91 9694578476
                 </a>
               </div>
 
@@ -230,10 +230,10 @@ const Footer = () => {
                 <FaEnvelope className="text-yellow-400" />
 
                 <a
-                  href="mailto:ia3055951@gmail.com"
+                  href="mailto:subhash.tom@gmail.com"
                   className="hover:text-yellow-400 transition"
                 >
-                  ia3055951@gmail.com
+                  subhash.tom@gmail.com
                 </a>
               </div>
             </div>

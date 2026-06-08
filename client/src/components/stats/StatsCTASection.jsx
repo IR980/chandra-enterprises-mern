@@ -77,7 +77,7 @@ const StatsCTASection = () => {
 
           <div className="flex flex-col sm:flex-row gap-5 justify-center mt-8">
             <a
-              href="https://wa.me/919801835063"
+              href="https://wa.me/919694578476"
               target="_blank"
               rel="noreferrer"
               className="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-2xl font-semibold"

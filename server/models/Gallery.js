@@ -11,9 +11,14 @@ const gallerySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
-    image: {
+    mediaUrl: {
       type: String,
+      required: true,
+    },
+    mediaType: {
+      type: String,
+      enum: ["image", "video"],
+      default: "image",
       required: true,
     },
 
@@ -27,9 +32,6 @@ const gallerySchema = new mongoose.Schema(
   }
 );
 
-const Gallery = mongoose.model(
-  "Gallery",
-  gallerySchema
-);
+const Gallery = mongoose.model("Gallery",gallerySchema);
 
 export default Gallery;

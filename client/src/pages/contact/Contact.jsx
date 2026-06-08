@@ -11,7 +11,7 @@ const locations = [
     title: "Main Office",
     type: "Head Office",
     address: "KHASRA NO.153, RAIPUR ROAD, Nanakpur Banger, Greater Noida",
-    phone: "+91 9801835063",
+    phone: "+91 9694578476",
     storage: "500 Tons",
     services: "Wholesale Supply",
     icon: <FaMapMarkerAlt />,
@@ -22,7 +22,7 @@ const locations = [
     title: "Cold Storage Facility",
     type: "Cold Storage",
     address: "Industrial Area, Greater Noida",
-    phone: "+91 9801835063",
+    phone: "+91 9694578476",
     storage: "500 Tons",
     services: "Cold Chain Storage",
     icon: <FaWarehouse />,
@@ -33,7 +33,7 @@ const locations = [
     title: "Logistics Hub",
     type: "Transportation",
     address: "Transport Nagar, Delhi NCR",
-    phone: "+91 9801835063",
+    phone: "+91 9694578476",
     storage: "Reefer Trucks",
     services: "Fast Delivery",
     icon: <FaTruck />,
@@ -120,7 +120,7 @@ const Contact = () => {
 
               <h3 className="mt-6 text-2xl font-bold">Call Us</h3>
 
-              <p className="mt-4 text-gray-400">+91 9801835063</p>
+              <p className="mt-4 text-gray-400">+91 9694578476</p>
             </motion.div>
 
             {/* Email */}
@@ -137,7 +137,7 @@ const Contact = () => {
 
               <h3 className="mt-6 text-2xl font-bold">Email Us</h3>
 
-              <p className="mt-4 text-gray-400">ia3055951@gmail.com</p>
+              <p className="mt-4 text-gray-400">subhash.tom@gmail.com</p>
             </motion.div>
 
             {/* WhatsApp */}
@@ -155,7 +155,7 @@ const Contact = () => {
               <h3 className="mt-6 text-2xl font-bold">WhatsApp</h3>
 
               <a
-                href="https://wa.me/919801835063"
+                href="https://wa.me/919694578476"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-4 inline-block text-gray-400 hover:text-green-400 transition"
