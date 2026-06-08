@@ -19,7 +19,6 @@ import productRoutes from "./routes/productRoutes.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import subscriberRoutes from "./routes/subscriberRoutes.js";
-
 // DNS Servers
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
