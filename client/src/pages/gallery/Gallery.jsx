@@ -91,62 +91,77 @@ const Gallery = () => {
       <section className="pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <PhotoProvider>
-            <div className="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
-              {filteredImages.map((item, index) => (
-                <motion.div
-                  key={`${item._id}-${index}`}
-                  initial={{ opacity: 0, y: 80 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.1,
-                  }}
-                  viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-3xl break-inside-avoid"
-                >
-                  
-                  <div className="cursor-pointer relative overflow-hidden rounded-3xl">
-                    {(item.mediaType || "image") === "video" ? (
-                      <video
-                        controls
-                        preload="metadata"
-                        className="w-full rounded-3xl bg-black"
-                      >
-                        <source
-                          src={item.mediaUrl || item.image}
-                          type="video/mp4"
-                        />
-                      </video>
-                    ) : (
-                      <PhotoView src={item.mediaUrl || item.image}>
-                        <img
-                          src={item.mediaUrl || item.image}
-                          alt={item.title}
-                          className="w-full object-cover rounded-3xl group-hover:scale-110 transition-all duration-700"
-                        />
-                      </PhotoView>
-                    )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {filteredImages.map((item, index) => {
+                const isVideo =
+                  (item.mediaType || "").toLowerCase().trim() === "video";
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6">
-                      <div className="translate-y-10 group-hover:translate-y-0 transition-all duration-500">
-                        <div className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full text-sm font-semibold">
-                          {item.category}
-                        </div>
+                return (
+                  <motion.div
+                    key={`${item._id}-${index}`}
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.08,
+                    }}
+                    viewport={{ once: true }}
+                    className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-sm hover:border-yellow-400/50 transition-all duration-300"
+                  >
+                    {/* MEDIA */}
+                    <div className="relative">
+                      {isVideo ? (
+                        <video
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="w-full h-72 object-cover bg-black"
+                        >
+                          <source src={item.mediaUrl} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <PhotoView src={item.mediaUrl || item.image}>
+                          <img
+                            src={item.mediaUrl || item.image}
+                            alt={item.title}
+                            className="w-full h-72 object-cover cursor-pointer transition-transform duration-700 hover:scale-110"
+                          />
+                        </PhotoView>
+                      )}
+                    </div>
 
-                        <h3 className="mt-4 text-2xl font-bold">
-                          {item.title}
-                        </h3>
+                    {/* CONTENT */}
+                    <div className="p-5">
+                      <span className="inline-flex items-center bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold">
+                        {item.category}
+                      </span>
 
-                        {item.description && (
-                          <p className="mt-2 text-sm text-gray-300">
-                            {item.description}
-                          </p>
+                      <h3 className="mt-4 text-xl font-bold text-white line-clamp-2">
+                        {item.title}
+                      </h3>
+
+                      {item.description && (
+                        <p className="mt-2 text-sm text-gray-400 leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
+
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="text-xs text-gray-500 uppercase tracking-wider">
+                          {isVideo ? "Video" : "Image"}
+                        </span>
+
+                        {isVideo && (
+                          <span className="text-green-400 text-sm font-medium">
+                            ▶ Play
+                          </span>
                         )}
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                );
+              })}
             </div>
           </PhotoProvider>
         </div>
