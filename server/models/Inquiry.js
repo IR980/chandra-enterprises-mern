@@ -28,7 +28,7 @@ const inquirySchema = new mongoose.Schema(
     },
     product: {
       type: String,
-      required: true,
+      default: null,
     },
   },
   {

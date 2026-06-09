@@ -11,14 +11,14 @@ const Hero = () => {
 
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center scale-105"
+        className="absolute inset-1 bg-cover bg-center scale-105"
         style={{
           backgroundImage: `url(${heroImage})`,
         }}
       ></div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/10"></div>
 
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-linear-to-r from-green-900/70 via-black/40 to-yellow-700/40"></div>
@@ -46,16 +46,16 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="mt-8 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+          className="mt-6 text-lg md:text-xl text-left text-gray-200 max-w-5xl mx-auto leading-relaxed"
         >
-          The export of food products from India is on the rise year after year.
-          Banana export from India is one of the rapidly growing export markets. 
-          Being one of the largest banana exporters in the world, 
-          Indian banana exporter has successfully entered the global market.
-          For export of banana, health and quality standards have to be maintained.
-          Farm Fresh Bananas with Fast Delivery.
-          Trusted wholesale banana supplier providing premium quality bananas,
-          cold storage, logistics, and pan India distribution services.
+          Chandra Enterprises is a diversified agribusiness and logistics company specializing in banana
+          supply chain management and allied services. The company is engaged in multiple verticals, ensuring
+          end-to-end solutions from sourcing to distribution and value addition.Our core business operations 
+          include banana ripening services using modern and controlled techniques, trading and supply of raw
+          bananas, and efficient transportation services to ensure timely delivery across regions. In addition,
+          we operate cold storage facilities to maintain product quality and extend shelf life.Expanding beyond
+          primary supply, Chandra Enterprises is also involved in banana-based product manufacturing, focusing on
+          value-added processing to meet growing market demand.
         </motion.p>
 
         {/* Buttons */}

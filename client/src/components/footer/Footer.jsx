@@ -207,13 +207,6 @@ const Footer = () => {
             <h3 className="text-2xl font-bold text-white">Contact Info</h3>
 
             <div className="mt-6 space-y-6 text-gray-400">
-              <div className="flex items-start gap-4">
-                <FaMapMarkerAlt className="text-yellow-400 mt-1" />
-
-                <p>
-                  KHASRA NO.153, RAIPUR ROAD, Nanakpur Banger, Greater Noida
-                </p>
-              </div>
 
               <div className="flex items-center gap-4">
                 <FaPhoneAlt className="text-yellow-400" />

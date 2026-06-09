@@ -35,17 +35,30 @@ const Inquiry = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.product ||
+      !formData.message
+    ) {
+      toast.error("Please fill all fields");
+      return;
+    }
+
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/inquiries",formData,);
+        "http://localhost:5000/api/inquiries",
+        formData,
+      );
 
-      toast.success(response.data.message || "Inquiry submitted successfully");
+      toast.success(response.data.message);
 
       setFormData({
         name: "",
         email: "",
         phone: "",
-        product: selectedProduct,
+        product: "",
         message: "",
       });
     } catch (error) {
@@ -82,7 +95,9 @@ const Inquiry = () => {
                 type="text"
                 name="product"
                 value={formData.product}
-                readOnly
+                onChange={handleChange}
+                required
+                placeholder="Product you're interested in"
                 className="w-full mt-2 bg-gray-100 border border-gray-300 rounded-xl px-4 py-3"
               />
             </div>
