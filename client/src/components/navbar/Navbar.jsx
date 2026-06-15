@@ -93,8 +93,12 @@ const Navbar = () => {
               <h1 className="text-xl font-bold text-white">
                 Chandra Enterprises
               </h1>
-
             </div>
+          </Link>
+
+          {/* payment link */}
+          <Link to="/payment" className="hover:text-yellow-400 transition text-blue-50 cursor-pointer">
+            Payment
           </Link>
 
           {/* DESKTOP MENU */}
@@ -123,11 +127,11 @@ const Navbar = () => {
             {/* USER LOGIN STATE */}
             {user ? (
               <div className="flex items-center gap-4">
-
-                {/* CLICKABLE USER PROFILE INFO */} 
+                {/* CLICKABLE USER PROFILE INFO */}
                 <Link
                   to="/profile"
-                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105">
+                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105"
+                >
                   {user.profilePicture ? (
                     <img
                       src={user.profilePicture}
@@ -139,15 +143,16 @@ const Navbar = () => {
                   )}
 
                   <div>
-
                     <h4 className="text-white font-semibold">{user.name}</h4>
                   </div>
                 </Link>
+                
 
                 {/* LOGOUT BUTTON */}
                 <button
                   onClick={handleLogout}
-                  className="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105">
+                  className="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                >
                   Logout
                 </button>
               </div>
@@ -155,13 +160,15 @@ const Navbar = () => {
               <div className="flex items-center gap-4">
                 <Link
                   to="/login"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105">
+                  className="bg-yellow-400 hover:bg-yellow-500 text-black px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                >
                   Login
                 </Link>
 
                 <Link
                   to="/register"
-                  className="bg-white text-black hover:bg-gray-200 px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105">
+                  className="bg-white text-black hover:bg-gray-200 px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                >
                   Register
                 </Link>
               </div>
@@ -171,7 +178,8 @@ const Navbar = () => {
           {/* MOBILE MENU BUTTON */}
           <button
             className="lg:hidden text-3xl text-white"
-            onClick={() => setIsOpen(!isOpen)}>
+            onClick={() => setIsOpen(!isOpen)}
+          >
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
@@ -180,8 +188,8 @@ const Navbar = () => {
       {/* MOBILE MENU */}
       {isOpen && (
         <motion.div
-          initial={{opacity: 0,y: -30,}}
-          animate={{opacity: 1,y: 0,}}
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
           className="lg:hidden bg-black/95 backdrop-blur-2xl border-t border-white/10"
         >
           <div className="flex flex-col px-6 py-6 gap-5">
@@ -191,20 +199,20 @@ const Navbar = () => {
                 key={index}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-white hover:text-yellow-400 transition">
+                className="text-lg font-medium text-white hover:text-yellow-400 transition"
+              >
                 {link.name}
               </NavLink>
             ))}
 
-
             {/* MOBILE USER AUTH */}
             {user ? (
               <div className="space-y-4">
-
                 {/* PROFILE */}
                 <Link
                   to="/profile"
-                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105">
+                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105"
+                >
                   {user.profilePicture ? (
                     <img
                       src={user.profilePicture}
@@ -216,15 +224,16 @@ const Navbar = () => {
                   )}
 
                   <div>
-
                     <h4 className="text-white font-semibold">{user.name}</h4>
                   </div>
                 </Link>
+                
 
                 {/* LOGOUT */}
                 <button
                   onClick={handleLogout}
-                  className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-full font-medium">
+                  className="w-full bg-red-500 hover:bg-red-600 text-white py-3 rounded-full font-medium"
+                >
                   Logout
                 </button>
               </div>

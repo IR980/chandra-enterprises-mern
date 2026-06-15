@@ -10,10 +10,9 @@ import Gallery from "./pages/gallery/Gallery";
 import Contact from "./pages/contact/Contact";
 import Inquiry from "./pages/inquiry/Inquiry";
 import Profile from "./pages/profile/Profile";
-
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
-
+import Payment from "./pages/payment/Payment";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 import NotFound from "./pages/notfound/NotFound";
@@ -40,18 +39,12 @@ function App() {
           <Route path="contact" element={<Contact />} />
 
           <Route path="inquiry" element={<Inquiry />} />
-
-          <Route
-            path="profile"
-            element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/payment" element={<Payment />} />
+          
+          <Route path="profile"element={<ProtectedRoute><Profile /></ProtectedRoute>}/>
 
         </Route>
-
+        
         {/* AUTH PAGES */}
         <Route path="/login" element={<Login />} />
 
