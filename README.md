@@ -1,282 +1,477 @@
-# Chandra Enterprises
+# 🍌 Chandra Enterprises
 
-A modern full-stack Banana Supply, Logistics, and Cold Storage Management website built using React, Node.js, Express, MongoDB, and Tailwind CSS.
-
----
-
-## Project Overview
-
-Chandra Enterprises is a business website designed for banana wholesale supply, cold storage services, logistics, and transportation management.
-
-The platform allows customers to:
-
-* Explore company services
-* View products
-* Browse gallery
-* Submit inquiries
-* Request quotations
-* Register and login
-* Manage profiles
-* Subscribe to newsletters
-* Contact the company directly
+A full-stack Banana Export, Cold Storage, Logistics, and Supply Chain Management platform built with the MERN Stack.
 
 ---
 
-## Features
+# 📌 Project Overview
 
-### Frontend Features
+Chandra Enterprises is a modern business website developed to manage banana supply operations, customer inquiries, product showcases, gallery management, user authentication, profile management, and payment workflows.
 
-* Modern Responsive UI
-* React Router Navigation
+The platform provides a professional digital presence for Chandra Enterprises while streamlining communication between customers and administrators.
+
+---
+
+# 🚀 Features
+
+## 🌐 Public Website
+
 * Home Page
-* About Page
-* Products Page
+* About Us
+* Products Showcase
 * Services Page
 * Gallery Page
 * Contact Page
 * Inquiry Page
-* Login & Registration
-* User Profile Page
-* Edit Profile System
 * Newsletter Subscription
 * Google Maps Integration
 * WhatsApp Integration
-* Animated UI using Framer Motion
-* Swiper Product Slider
-* React Hot Toast Notifications
+* Responsive Design
+
+---
+
+## 🔐 Authentication System
+
+### User Registration
+
+* Name
+* Email
+* Phone Number
+* Password
+
+### User Login
+
+* JWT Authentication
+* Secure Password Hashing
+* Protected Routes
+
+### User Profile
+
+* View Profile
+* Edit Profile
+* Update Name
+* Update Phone Number
+* Change Password
+* Upload Profile Picture
+
+---
+
+## 👤 Profile Picture System
+
+### Features
+
+* Upload Profile Picture
+* Cloudinary Integration
+* MongoDB Storage
+* Navbar Profile Avatar
+* Profile Page Avatar
+* Persistent After Refresh
+* Real-Time Update
+
+---
+
+## 📦 Dynamic Products System
+
+### Product Information
+
+* Product Name
+* Product Image
+* Weight
+* Packaging Type
+* Shelf Life
+* Availability Status
+
+### Request Quote
+
+Users can:
+
+* Select Product
+* Click Request Quote
+* Redirect to Inquiry Page
+* Product Auto Filled
+
+---
+
+## 📸 Dynamic Gallery System
+
+### Gallery Features
+
+* Image Gallery
+* Category Filters
+* Lightbox Preview
+* Responsive Masonry Layout
+
+### Upcoming Upgrade
+
+* Video Gallery Support
+* Image & Video Filters
+* Cloudinary Media Storage
+
+---
+
+## 📨 Inquiry Management System
+
+### Inquiry Form
+
+* Name
+* Email
+* Phone
+* Product
+* Message
 
 ### Backend Features
 
-* REST API Architecture
-* User Authentication
-* JWT Based Login System
-* Protected Routes
-* MongoDB Database Integration
-* Contact Inquiry System
-* Dynamic Products API
-* Dynamic Gallery API
-* Newsletter Subscription API
-* User Profile Management
+* MongoDB Storage
+* REST API
+* Admin Management Ready
 
 ---
 
-## Tech Stack
+## 📩 Newsletter Subscription System
 
-### Frontend
+Users can:
+
+* Enter Email
+* Subscribe
+* Save to MongoDB
+* Duplicate Email Protection
+
+---
+
+## 🗺 Location System
+
+### Google Maps Integration
+
+* Company Location
+* Embedded Google Maps
+* Direct Navigation Support
+
+---
+
+## 💳 Payment System 
+
+### Static QR Payment
+
+Workflow:
+
+Customer → Scan QR → Pay → Upload Screenshot → Admin Verification
+
+Features:
+
+* UPI Payment Support
+* Google Pay
+* PhonePe
+* Paytm
+* Transaction ID
+* Payment Screenshot Upload
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
 
 * React.js
-* React Router DOM
+* Vite
 * Tailwind CSS
-* Framer Motion
-* Swiper JS
+* React Router DOM
 * Axios
-* React Icons
 * React Hot Toast
+* Framer Motion
+* Swiper.js
+* React Icons
+* React Photo View
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
-* MongoDB Atlas
-* Mongoose
 * JWT Authentication
-* bcryptjs
-* dotenv
-* cors
-* morgan
+* Multer
+* Cloudinary
+* BcryptJS
+
+## Database
+
+* MongoDB Atlas
+* Mongoose ODM
+
+## Storage
+
+* Cloudinary
 
 ---
 
-## Project Structure
+# 📂 Project Structure
 
 ```bash
-Chandra-Enterprises
+Chandra-Enterprises/
 │
-├── client
-│   ├── src
-│   │   ├── assets
-│   │   ├── api
-│   │   ├── components
-│   │   ├── layouts
-│   │   ├── pages
-│   │   ├── routes
+├── client/
+│   │
+│   ├── src/
+│   │   ├── api/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── layouts/
+│   │   ├── pages/
+│   │   │
+│   │   ├── routes/
 │   │   └── App.jsx
+│   │
+│   └── package.json
 │
-├── server
-│   ├── config
-│   ├── controllers
-│   ├── middleware
-│   ├── models
-│   ├── routes
+├── server/
+│   │
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── uploads/
+│   ├── utils/
+│   │
 │   ├── server.js
-│   └── .env
+│   ├── app.js
+│   └── package.json
 │
 └── README.md
 ```
 
 ---
 
-## Installation
+# 🗄 Database Collections
 
-### Clone Repository
+## Users
 
-```bash
-git clone https://github.com/yourusername/chandra-enterprises.git
+```javascript
+{
+  name,
+  email,
+  phone,
+  password,
+  role,
+  profilePicture
+}
 ```
 
-```bash
-cd chandra-enterprises
+## Products
+
+```javascript
+{
+  title,
+  image,
+  weight,
+  packaging,
+  shelfLife,
+  availability
+}
+```
+
+## Gallery
+
+```javascript
+{
+  title,
+  category,
+  mediaUrl,
+  mediaType,
+  description
+}
+```
+
+## Inquiries
+
+```javascript
+{
+  name,
+  email,
+  phone,
+  product,
+  message
+}
+```
+
+## Subscribers
+
+```javascript
+{
+  email
+}
+```
+
+## Payments
+
+```javascript
+{
+  amount,
+  transactionId,
+  screenshot,
+  status
+}
 ```
 
 ---
 
-## Frontend Setup
+# 🔑 Environment Variables
 
-```bash
-cd client
+Create:
+
+```env
+server/.env
 ```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run frontend:
-
-```bash
-npm run dev
-```
-
-Frontend URL:
-
-```bash
-http://localhost:5173
-```
-
----
-
-## Backend Setup
-
-```bash
-cd server
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create `.env` file:
 
 ```env
 PORT=5000
 
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=YOUR_MONGODB_URI
 
-JWT_SECRET=your_secret_key
+JWT_SECRET=YOUR_SECRET_KEY
+
+CLOUDINARY_CLOUD_NAME=YOUR_CLOUD_NAME
+
+CLOUDINARY_API_KEY=YOUR_API_KEY
+
+CLOUDINARY_API_SECRET=YOUR_API_SECRET
 ```
 
-Run backend:
+---
+
+# ⚙ Installation
+
+## Clone Repository
 
 ```bash
-npm run dev
+git clone https://github.com/IR980/chandra-enterprises.git
 ```
 
-Backend URL:
+---
 
+## Install Frontend
+
+```bash
+cd client
+npm install
+npm run dev
+```
+```bash
+http://localhost:5173
+```
+---
+
+## Install Backend
+
+```bash
+cd server
+npm install
+npm run dev
+```
 ```bash
 http://localhost:5000
 ```
+---
+
+# 🚀 Deployment
+
+## Frontend
+
+* Vercel
+
+## Backend
+
+* Render
+
+## Database
+
+* MongoDB Atlas
+
+## Media Storage
+
+* Cloudinary
 
 ---
 
-## Available APIs
-
-### Authentication
-
-```http
-POST /api/auth/register
-POST /api/auth/login
-```
-
-### User Profile
-
-```http
-GET /api/users/profile
-PUT /api/users/profile
-```
-
-### Inquiries
-
-```http
-POST /api/inquiries
-GET /api/inquiries
-```
-
-### Products
-
-```http
-GET /api/products
-```
-
-### Gallery
-
-```http
-GET /api/gallery
-```
-
-### Newsletter Subscription
-
-```http
-POST /api/subscribers
-```
-
----
-
-## Request Quote Workflow
-
-```text
-Product Showcase
-      ↓
-Request Quote
-      ↓
-Inquiry Page
-      ↓
-Auto-Filled Product Name
-      ↓
-Submit Inquiry
-      ↓
-MongoDB Database
-```
-
----
-
-## Future Improvements
+# 🔮 Future Enhancements
 
 * Admin Dashboard
 * Product Management Panel
-* Inquiry Management Panel
-* Cloudinary Image Upload
-* Product Search & Filters
-* Order Tracking
+* Gallery Upload Panel
+* Video Gallery
+* Razorpay Integration
+* Invoice Generation
+* Order Management System
+* Forgot Password System
+* OTP Verification
 * Email Notifications
-* Deployment on Render & Vercel
+* Analytics Dashboard
 
 ---
 
-## Author
+# 👨‍💻 Developer
 
-### Chandra Enterprises
+### Irshad Dev
 
-Developer: Irshad Alam
+Full Stack MERN Developer
 
-Location: Greater Noida, Uttar Pradesh, India
+Specialized in:
+
+* React.js
+* Node.js
+* Express.js
+* MongoDB
+* Cloudinary
+* Tailwind CSS
+* JWT Authentication
+* REST APIs
+
+### Project
+
+**Chandra Enterprises**
+
+Banana Export • Cold Storage • Logistics • Supply Chain Solutions
+
+### Contact
+
+📧 Email: [ia3055951@gmail.com](mailto:ia3055951@gmail.com)
+
+📱 Phone: +91 9801835063
+
+🌐 Portfolio: Coming Soon
+
+💼 GitHub: https://github.com/IR980
 
 ---
 
-## License
+## 👨‍💻 Author
 
-This project is developed for Chandra Enterprises and intended for business use.
+**Chandra Enterprises**
+
+Full Stack MERN Developer
+
+Built and maintained the complete Chandra Enterprises platform including:
+
+* Frontend Development
+* Backend Development
+* MongoDB Database Design
+* Cloudinary Media Management
+* Authentication System
+* Profile Management
+* Inquiry System
+* Gallery Management
+* Newsletter System
+* Payment Integration
+
+### © 2026 Chandra Enterprises
+
+Designed & Developed with ❤️ by **Irshad Dev**
+
+
+---
+
+# 📄 License
+
+This project is developed for Chandra Enterprises and is intended for business operations and customer engagement.
+
 © 2026 Chandra Enterprises. All Rights Reserved.
+---
