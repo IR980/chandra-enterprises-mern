@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 import {FaTruck,FaWarehouse,FaBoxes,FaShippingFast,FaLeaf,FaIndustry,FaWhatsapp,} from "react-icons/fa";
 
-import service1 from "../../assets/images/service1.jpg";
+import service1 from "../../assets/images/service1.webp";
 import service2 from "../../assets/images/service2.jpg";
 import service3 from "../../assets/images/service3.jpg";
-import service4 from "../../assets/images/service4.jpg";
-import service5 from "../../assets/images/service5.jpg";
+import service4 from "../../assets/images/service4.png";
+import service5 from "../../assets/images/service5.jpeg";
 import service6 from "../../assets/images/service6.jpg";
 
 const services = [

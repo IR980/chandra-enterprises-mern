@@ -78,13 +78,9 @@ const Payment = () => {
 
                   <div>
                     <p className="text-sm text-gray-500">IFSC Code</p>
-                    <p className="font-semibold text-gray-900">BKID006856</p>
+                    <p className="font-semibold text-gray-900">BKID0006856</p>
                   </div>
 
-                  <div>
-                    <p className="text-sm text-gray-500">Branch</p>
-                    <p className="font-semibold text-gray-900">RAYA BRANCH,U.P. - 281204</p>
-                  </div>
                 </div>
 
                 <div className="mt-8 bg-yellow-300 border border-yellow-200 rounded-2xl p-4">

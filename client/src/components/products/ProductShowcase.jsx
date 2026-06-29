@@ -24,7 +24,7 @@ const products = [
   {
     id: 2,
     image: banana2,
-    name: "Raw Banana",
+    name: "Banana",
     weight: "12 KG",
     size: '50" x 40" x 24"',
     shelfLife: "7-10 Days",
@@ -35,7 +35,7 @@ const products = [
   {
     id: 3,
     image: banana3,
-    name: "Export Grade Banana",
+    name: "Raw Banana",
     weight: "13 KG",
     size: '52" x 42" x 24"',
     shelfLife: "14 Days",

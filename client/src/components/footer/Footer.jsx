@@ -274,7 +274,7 @@ const Footer = () => {
           <div className="flex items-center gap-6">
             <p>GST: 09ABCDE1234F1Z5</p>
 
-            <p>FSSAI: 12345678900000</p>
+            <p>FSSAI: 22725130000099</p>
           </div>
         </div>
       </div>

@@ -213,10 +213,10 @@ const Contact = () => {
                       {location.type}
                     </p>
 
-                    <p>
+                    {/* <p>
                       <span className="text-white font-semibold">Address:</span>{" "}
                       {location.address}
-                    </p>
+                    </p> */}
 
                     <p>
                       <span className="text-white font-semibold">Contact:</span>{" "}
