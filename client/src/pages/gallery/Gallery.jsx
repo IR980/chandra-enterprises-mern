@@ -111,15 +111,17 @@ const Gallery = () => {
                     {/* MEDIA */}
                     <div className="relative">
                       {isVideo ? (
-                        <video
-                          controls
-                          playsInline
-                          preload="metadata"
-                          className="w-full h-72 object-cover bg-black"
-                        >
-                          <source src={item.mediaUrl} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                       
+                          <video
+                            src={item.mediaUrl}
+                            controls
+                            controlsList="download"
+                            playsInline
+                            preload="metadata"
+                            className="relative z-30 w-full h-72 object-cover rounded-t-3xl cursor-pointer"
+                            style={{ pointerEvents: "auto" }}
+                          />
+                       
                       ) : (
                         <PhotoView src={item.mediaUrl || item.image}>
                           <img
