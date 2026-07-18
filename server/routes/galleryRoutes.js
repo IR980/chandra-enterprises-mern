@@ -1,13 +1,15 @@
 import express from "express";
 
-import {getGalleryImages,addGalleryMedia,} from "../controllers/galleryController.js";
-
+import {getGalleryImages,addGalleryMedia,deleteGalleryMedia,updateGalleryMedia} from "../controllers/galleryController.js";
 import galleryUpload from "../middleware/galleryUploadMiddleware.js";
-
 const router = express.Router();
 
 router.get("/", getGalleryImages);
 
-router.post("/upload",galleryUpload.single("media"),addGalleryMedia);
+router.post("/", galleryUpload.single("media"), addGalleryMedia);
+
+router.put("/:id", galleryUpload.single("media"), updateGalleryMedia);
+
+router.delete("/:id", deleteGalleryMedia);
 
 export default router;

@@ -4,34 +4,55 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // LOAD USER FROM LOCAL STORAGE
+  // ===============================
+  // Load User on Refresh
+  // ===============================
+
   useEffect(() => {
     const storedUser = localStorage.getItem("userInfo");
-
-    if (storedUser) {
+    if(storedUser) {
       setUser(JSON.parse(storedUser));
     }
+    setLoading(false);
   }, []);
 
-  // LOGIN
+  // ===============================
+  // Login
+  // ===============================
+
   const login = (userData) => {
     localStorage.setItem("userInfo", JSON.stringify(userData));
+
+    localStorage.setItem("token", userData.token);
 
     setUser(userData);
   };
 
-  // LOGOUT
+  // ===============================
+  // Logout
+  // ===============================
+
   const logout = () => {
     localStorage.removeItem("userInfo");
+
+    localStorage.removeItem("token");
 
     setUser(null);
   };
 
+  // ===============================
+  // Update User
+  // ===============================
+
   const updateUser = (updatedUser) => {
     const currentUser = JSON.parse(localStorage.getItem("userInfo"));
 
-    const mergedUser = {...currentUser,...updatedUser,};
+    const mergedUser = {
+      ...currentUser,
+      ...updatedUser,
+    };
 
     localStorage.setItem("userInfo", JSON.stringify(mergedUser));
 
@@ -40,7 +61,13 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{user,login,logout,updateUser}}
+      value={{
+        user,
+        login,
+        logout,
+        updateUser,
+        loading,
+      }}
     >
       {children}
     </AuthContext.Provider>

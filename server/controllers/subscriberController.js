@@ -33,3 +33,44 @@ export const subscribeEmail = async (req,res) => {
 
   }
 };
+
+// admin routes
+export const getSubscribers = async (req,res) => {
+  try {
+    const subscribers = await Subscriber.find().sort({ createdAt: -1 });
+
+    res.status(200).json({
+      subscribers,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
+// delete subscriber
+export const deleteSubscriber = async (req, res) => {
+  try {
+    const subscriber = await Subscriber.findById(req.params.id);
+
+    if (!subscriber) {
+      return res.status(404).json({
+        message: "Subscriber not found",
+      });
+    }
+
+    await Subscriber.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({
+      message: "Subscriber deleted successfully",
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};

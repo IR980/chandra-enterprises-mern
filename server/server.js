@@ -19,6 +19,7 @@ import productRoutes from "./routes/productRoutes.js";
 import galleryRoutes from "./routes/galleryRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import subscriberRoutes from "./routes/subscriberRoutes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
 // DNS Servers
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
@@ -36,15 +37,15 @@ app.use("/api/products", productRoutes);
 app.use("/api/gallery", galleryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/subscribers", subscriberRoutes);
-
+app.use("/api/dashboard", dashboardRoutes);
 // TEST ROUTE
 app.get("/", (req, res) => {
   res.send("API Running...");
-});
+}); 
 
 const PORT = process.env.PORT || 5000;
 
-// START SERVER
+// START SERVER 
 const startServer = async () => {
   try {
 
