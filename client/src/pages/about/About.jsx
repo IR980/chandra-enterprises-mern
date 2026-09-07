@@ -138,7 +138,7 @@ const About = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="bg-gradient-to-br from-green-500 to-yellow-500 p-[2px] rounded-[40px]">
+              <div className="bg-linear-to-br from-green-500 to-yellow-500 p-0.5 rounded-[40px]">
                 <div className="bg-black rounded-[40px] p-6">
                   <div className="grid grid-cols-2 gap-4">
                     {stats.map((item, index) => (
@@ -162,7 +162,7 @@ const About = () => {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="py-12 bg-gradient-to-b from-black to-gray-950">
+      <section className="py-12 bg-linear-to-b from-black to-gray-950">
         <div className="max-w-5xl mx-auto px-6 lg:px-10">
           <div className="grid md:grid-cols-2 gap-6">
             {/* Mission */}
@@ -239,11 +239,11 @@ const About = () => {
                 className="group relative"
               >
                 {/* Glow */}
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-yellow-500 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-green-500 to-yellow-500 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-500 rounded-3xl"></div>
 
                 {/* Card */}
                 <div className="relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl hover:-translate-y-3 transition-all duration-500">
-                  <div className="w-15 h-15 rounded-3xl bg-gradient-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl text-white">
+                  <div className="w-15 h-15 rounded-3xl bg-linear-to-r from-green-500 to-yellow-500 flex items-center justify-center text-3xl text-white">
                     {item.icon}
                   </div>
 
@@ -260,7 +260,7 @@ const About = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-12 bg-gradient-to-br from-sky-900 via-sky to-sky-900">
+      <section className="py-12 bg-linear-to-br from-sky-900 via-sky to-sky-900">
         <div className="max-w-5xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 80 }}

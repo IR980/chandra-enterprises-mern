@@ -13,6 +13,5 @@ router.put("/profile",protect,updateProfile);
 
 /* Upload Profile Picture */
 router.post("/profile/upload",protect,upload.single("image"),uploadProfilePicture);
-
 export default router;
 
