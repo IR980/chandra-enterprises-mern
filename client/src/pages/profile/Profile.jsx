@@ -101,7 +101,7 @@ const Profile = () => {
           {/* Profile Header */}
           <div className="text-center">
             <div className="relative w-32 h-32 mx-auto">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-r from-yellow-400 to-green-500 flex items-center justify-center text-7xl text-black shadow-2xl overflow-hidden">
+              <div className="w-32 h-32 rounded-full bg-linear-to-r from-yellow-400 to-green-500 flex items-center justify-center text-7xl text-black shadow-2xl overflow-hidden">
                 {user?.profilePicture ? (
                   <img
                     src={user.profilePicture}
@@ -249,7 +249,7 @@ const Profile = () => {
             <div className="flex flex-col md:flex-row gap-4 pt-4">
               <button
                 type="submit"
-                className="flex-1 bg-gradient-to-r from-green-500 to-yellow-400 text-black py-4 rounded-2xl font-bold hover:scale-105 transition-all duration-300"
+                className="flex-1 bg-linear-to-r from-green-500 to-yellow-400 text-black py-4 rounded-2xl font-bold hover:scale-105 transition-all duration-300"
               >
                 Save Changes
               </button>
