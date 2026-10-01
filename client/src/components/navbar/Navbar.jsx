@@ -1,19 +1,13 @@
 import { useState, useEffect } from "react";
-
 import { Link, NavLink } from "react-router-dom";
-
 import { FiMenu, FiX } from "react-icons/fi";
-
-import { FaWhatsapp, FaUserCircle } from "react-icons/fa";
-
+import { FaUserCircle } from "react-icons/fa";
 import { useAuth } from "../../context/AuthContext";
-
 import { motion } from "framer-motion";
 import logo from "../../assets/logo/logo.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [scrolled, setScrolled] = useState(false);
 
   // AUTH CONTEXT
@@ -22,10 +16,10 @@ const Navbar = () => {
   // LOGOUT FUNCTION
   const handleLogout = () => {
     logout();
-
     window.location.href = "/";
   };
 
+  // HANDLE SCROLL
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -33,35 +27,37 @@ const Navbar = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
+  // NAVIGATION LINKS
   const navLinks = [
     {
       name: "Home",
       path: "/",
     },
-
     {
       name: "About",
       path: "/about",
     },
-
     {
       name: "Products",
       path: "/products",
     },
-
     {
       name: "Services",
       path: "/services",
     },
-
     {
       name: "Gallery",
       path: "/gallery",
     },
-
+    {
+      name: "Track Vehicles",
+      path: "/track-vehicles",
+    },
     {
       name: "Contact",
       path: "/contact",
@@ -96,16 +92,19 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* payment link */}
-          <Link to="/payment" className="hover:text-yellow-400 transition text-blue-50 cursor-pointer">
+          {/* PAYMENT LINK */}
+          <Link
+            to="/payment"
+            className="hidden lg:block hover:text-yellow-400 transition text-blue-50 cursor-pointer"
+          >
             Payment
           </Link>
 
           {/* DESKTOP MENU */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <NavLink
-                key={index}
+                key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
                   `relative font-medium transition-all duration-300 ${
@@ -115,22 +114,30 @@ const Navbar = () => {
                   }`
                 }
               >
-                {link.name}
+                {({ isActive }) => (
+                  <>
+                    {link.name}
 
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-400 transition-all duration-300 hover:w-full"></span>
+                    <span
+                      className={`absolute left-0 -bottom-1 h-0.5 bg-yellow-400 transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    />
+                  </>
+                )}
               </NavLink>
             ))}
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE - DESKTOP */}
           <div className="hidden lg:flex items-center gap-4">
             {/* USER LOGIN STATE */}
             {user ? (
               <div className="flex items-center gap-4">
-                {/* CLICKABLE USER PROFILE INFO */}
+                {/* USER PROFILE */}
                 <Link
                   to="/profile"
-                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105"
+                  className="flex items-center gap-3 rounded-full px-2 py-1 hover:bg-gray-600/50 transition-all duration-300 cursor-pointer hover:scale-105"
                 >
                   {user.profilePicture ? (
                     <img
@@ -146,9 +153,8 @@ const Navbar = () => {
                     <h4 className="text-white font-semibold">{user.name}</h4>
                   </div>
                 </Link>
-                
 
-                {/* LOGOUT BUTTON */}
+                {/* LOGOUT */}
                 <button
                   onClick={handleLogout}
                   className="bg-red-500 hover:bg-red-600 text-white px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
@@ -158,16 +164,18 @@ const Navbar = () => {
               </div>
             ) : (
               <div className="flex items-center gap-4">
+                {/* LOGIN */}
                 <Link
                   to="/login"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                  className="hidden lg:block hover:text-yellow-400 transition text-blue-50 cursor-pointer"
                 >
                   Login
                 </Link>
 
+                {/* REGISTER */}
                 <Link
                   to="/register"
-                  className="bg-white text-black hover:bg-gray-200 px-5 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105"
+                  className="hidden lg:block hover:text-yellow-400 transition text-blue-50 cursor-pointer"
                 >
                   Register
                 </Link>
@@ -179,6 +187,7 @@ const Navbar = () => {
           <button
             className="lg:hidden text-3xl text-white"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle navigation menu"
           >
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
@@ -194,16 +203,31 @@ const Navbar = () => {
         >
           <div className="flex flex-col px-6 py-6 gap-5">
             {/* NAV LINKS */}
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <NavLink
-                key={index}
+                key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium text-white hover:text-yellow-400 transition"
+                className={({ isActive }) =>
+                  `text-lg font-medium transition ${
+                    isActive
+                      ? "text-yellow-400"
+                      : "text-white hover:text-yellow-400"
+                  }`
+                }
               >
                 {link.name}
               </NavLink>
             ))}
+
+            {/* MOBILE PAYMENT */}
+            <Link
+              to="/payment"
+              onClick={() => setIsOpen(false)}
+              className="text-lg font-medium text-white hover:text-yellow-400 transition"
+            >
+              Payment
+            </Link>
 
             {/* MOBILE USER AUTH */}
             {user ? (
@@ -211,7 +235,8 @@ const Navbar = () => {
                 {/* PROFILE */}
                 <Link
                   to="/profile"
-                  className="flex items-center gap-4 rounded-full h-10 w-45 hover:bg-gray-600 transition-all duration-300 cursor-pointer hover:scale-105"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center gap-4 rounded-full px-2 py-2 hover:bg-gray-600/50 transition-all duration-300"
                 >
                   {user.profilePicture ? (
                     <img
@@ -227,7 +252,6 @@ const Navbar = () => {
                     <h4 className="text-white font-semibold">{user.name}</h4>
                   </div>
                 </Link>
-                
 
                 {/* LOGOUT */}
                 <button
@@ -242,6 +266,7 @@ const Navbar = () => {
                 {/* LOGIN */}
                 <Link
                   to="/login"
+                  onClick={() => setIsOpen(false)}
                   className="text-center bg-yellow-400 text-black py-3 rounded-full font-medium"
                 >
                   Login
@@ -250,6 +275,7 @@ const Navbar = () => {
                 {/* REGISTER */}
                 <Link
                   to="/register"
+                  onClick={() => setIsOpen(false)}
                   className="text-center bg-white text-black py-3 rounded-full font-medium"
                 >
                   Register

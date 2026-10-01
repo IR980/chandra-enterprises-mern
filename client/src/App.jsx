@@ -20,6 +20,8 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import NotFound from "./pages/notfound/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
+// vehicle tracking
+import TrackVehicles from "./pages/TrackVehicles";
 /* ===========================
    ADMIN PAGES
 =========================== */
@@ -54,6 +56,7 @@ function App() {
 
           <Route path="inquiry" element={<Inquiry />} />
           <Route path="/payment" element={<Payment />} />
+          <Route path="/track-vehicles" element={<TrackVehicles />} />
 
           <Route
             path="profile"
