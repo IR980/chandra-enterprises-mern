@@ -55,7 +55,10 @@ function App() {
           <Route path="contact" element={<Contact />} />
 
           <Route path="inquiry" element={<Inquiry />} />
+
           <Route path="/payment" element={<Payment />} />
+
+          
           <Route path="/track-vehicles" element={<TrackVehicles />} />
 
           <Route
